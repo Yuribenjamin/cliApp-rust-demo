@@ -1,8 +1,7 @@
 #![allow(non_snake_case)]
 fn main() {
     let name = "Ibrahim";
-    println!("{}", name);
+    let anotherName = "Zoe";
 
-    let name = "Zoe";
-    println!("{}", name);
+    println!("{} and {}", name, anotherName)
 }
