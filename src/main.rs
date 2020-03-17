@@ -1,14 +1,9 @@
-#![allow(non_snake_case)]
+use std::io;
+
 fn main() {
-    let first = "Ibrahim".to_string();
-    say_name(&first);
-    say_name(&first);
-}
+    println!("Enter your bloody name: ");
 
-fn say_name(first: &String) {
-    println!("{}", first)
+    let mut name = String::new();
+    io::stdin().read_line(&mut name);
+    println!("Welcome bloody {}", name);
 }
-
-/*function has been called with this value, we can no longer use this variable
- pass it by reference instead of by value using the & symbol and by updating the function's signature
-*/
