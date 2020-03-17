@@ -1,25 +1,35 @@
 #![allow(non_snake_case)]
 use std::io;
+use std::process;
 
 fn main() {
-    println!("Please enter a first number: ");
+	loop {
+		println!("Please enter a first number: ");
+		let a = read_user_input();
 
-    let mut first = String::new();
-    io::stdin().read_line(&mut first);
+		println!("Please enter a second number: ");
+		let b = read_user_input();
 
-    let a: u32 = first.trim().parse().expect("This is not a valid number");
-
-    println!("Please enter a second number: ");
-
-    let mut second = String::new();
-    io::stdin().read_line(&mut second);
-
-    let b: u32 = second.trim().parse().expect("This is not a valid number");
-
-    let result = sum(a, b);
-    println!("{} + {} = {}", a, b, result);
+		let result = sum(a, b);
+		println!("{} + {} = {}", a, b, result);
+	}
 }
 
 fn sum(a: u32, b: u32) -> u32 {
-    a + b
+	a + b
+}
+
+fn read_user_input() -> u32 {
+	let mut input = String::new();
+	io::stdin().read_line(&mut input).unwrap();
+
+	let digit: u32;
+	match input.trim().parse() {
+		Ok(val) => digit = val,
+		Err(_err) => {
+			println!("Not a valid number!");
+			process::exit(1);
+		}
+	};
+	digit
 }
