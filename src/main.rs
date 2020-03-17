@@ -1,3 +1,8 @@
+#![allow(non_snake_case)]
 fn main() {
-    println!("Hello, world!");
+    let name = "Ibrahim";
+    println!("{}", name);
+
+    let name = "Zoe";
+    println!("{}", name);
 }
