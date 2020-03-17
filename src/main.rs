@@ -1,7 +1,11 @@
 #![allow(non_snake_case)]
 fn main() {
-    let name = "Ibrahim";
-    let anotherName = "Zoe";
+    let first = "Ibrahim".to_string();
+    let last = "Ragab".to_string();
 
-    println!("{} and {}", name, anotherName)
+    say_name(first, last)
+}
+
+fn say_name(first: String, last: String) {
+    println!("{} {}", first, last)
 }
